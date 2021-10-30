@@ -6,29 +6,20 @@ import 'package:flutter/material.dart';
 class Signin extends StatefulWidget {
   @override
   _SigninState createState() => _SigninState();
-  
-  
 }
 
-
-
 class _SigninState extends State<Signin> {
- TextEditingController emailController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
   String fullName = '';
   bool _checkbox = false;
   bool _passwordVisible;
-    String _password;
- @override
- 
+  String _password;
+  bool emailValid = true;
+  String _email;
+  @override
   void initState() {
-
     _passwordVisible = false;
   }
-  
-
-
-  
-  
 
   @override
   Widget build(BuildContext context) {
@@ -80,74 +71,66 @@ class _SigninState extends State<Signin> {
                 right: 20,
               ),
               child: TextFormField(
-               
                 decoration: InputDecoration(
+                  errorText: !emailValid ? 'invalid email' : null,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     borderSide: BorderSide(width: 1, color: Color(0xff957DEB)),
                   ),
                   border: OutlineInputBorder(),
                   labelText: 'Email / Mobile number',
-                 
-                  
-                 
                   prefixIcon: const Icon(Icons.email_outlined,
                       color: Color(0xff979797)),
                 ),
-                 validator: (val) => val.isEmpty || !val.contains("@")
-              ? "enter a valid email"
-              : null,
-         
+                validator: (val) => val.isEmpty || !val.contains("@")
+                    ? "enter a valid email"
+                    : null,
                 keyboardType: TextInputType.emailAddress,
-                controller:emailController ,
+                controller: emailController,
                 onChanged: (text) {
                   setState(() {
                     fullName = text;
+                    _email = text.trim();
+                    emailValid = true;
+
                     //you can access nameController in its scope to get
                     // the value of text entered as shown below
                     //fullName = nameController.text;
                   });
                 },
               )),
-              
           Container(
               margin: EdgeInsets.all(20),
               child: TextFormField(
                 obscureText: !_passwordVisible,
-               
                 decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    borderSide: BorderSide(width: 1, color: Color(0xff957DEB)),
-                  ),
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
-                     prefixIcon: const Icon(Icons.vpn_key_outlined,
-                      color: Color(0xff979797)),
-                
-                      suffixIcon: IconButton(
-            icon: Icon(
-              // Based on passwordVisible state choose the icon
-               _passwordVisible
-               ? Icons.visibility
-               : Icons.visibility_off,
-               color: Theme.of(context).primaryColorDark,
-               ),
-            onPressed: () {
-               // Update the state i.e. toogle the state of passwordVisible variable
-               setState(() {
-                   _passwordVisible = !_passwordVisible;
-               }
-               );}
-                      )
-                ),
-                  validator: (val) => val.length < 8 ? 'Password too short.' : null,
-              onSaved: (val) => _password = val,
-              )
-          ),
-                
-            
-                        
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide:
+                          BorderSide(width: 1, color: Color(0xff957DEB)),
+                    ),
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
+                    prefixIcon: const Icon(Icons.vpn_key_outlined,
+                        color: Color(0xff979797)),
+                    suffixIcon: IconButton(
+                        icon: Icon(
+                          // Based on passwordVisible state choose the icon
+                          _passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Theme.of(context).primaryColorDark,
+                        ),
+                        onPressed: () {
+                          // Update the state i.e. toogle the state of passwordVisible variable
+                          setState(() {
+                            _passwordVisible = !_passwordVisible;
+                          });
+                        })),
+                validator: (val) =>
+                    val.length < 8 ? 'Password too short.' : null,
+                onSaved: (val) => _password = val,
+              )),
           Row(
             children: [
               Checkbox(
@@ -193,6 +176,12 @@ class _SigninState extends State<Signin> {
 //    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeSecond()));
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => BottomNavigation()));
+              if (!RegExp(
+                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                  .hasMatch(_email))
+                setState(() {
+                  emailValid = false;
+                });
             },
             child: Container(
                 height: 56,
