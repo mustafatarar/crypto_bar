@@ -1,5 +1,6 @@
 import 'package:cryptoapp/Home_second.dart';
 import 'package:cryptoapp/screens.dart/login_screens/Splash_Screen.dart';
+import 'package:cryptoapp/screens.dart/payment_method.dart';
 import 'package:cryptoapp/screens.dart/settings.dart';
 
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           textTheme: TextTheme(subtitle1: TextStyle(color: Colors.white)),
@@ -38,6 +39,6 @@ class MyApp extends StatelessWidget {
             // is not restarted.
           ),
         ),
-        home: SplashScreen());
+        home: PaymentMethod());
   }
 }

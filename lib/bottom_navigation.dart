@@ -1,6 +1,8 @@
 import 'package:cryptoapp/Home_second.dart';
 import 'package:cryptoapp/New_Homapage.dart';
+import 'package:cryptoapp/Notifications.dart';
 import 'package:cryptoapp/Profile_new.dart';
+import 'package:cryptoapp/screens.dart/Buy_coins.dart';
 import 'package:cryptoapp/screens.dart/New_requst.dart';
 import 'package:cryptoapp/screens.dart/Profile.dart';
 import 'package:cryptoapp/screens.dart/mainscreen.dart';
@@ -15,22 +17,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 final screens = [
   HomeSecond(),
-  Container(
-    color: Colors.black54,
-    child: Center(
-      child: Text(
-        'NOTIFICATION',
-        style: TextStyle(color: Colors.white),
-      ),
-    ),
-  ),
+  Notifications(),
   MainPage(),
   ProfileNew(),
   Settings(),
   NewRequest(),
   NewHomepage(),
-  
-  UploadNewProperty(),
+  BuYCoins(),
 ];
 
 class TabNavigator extends StatelessWidget {
@@ -145,7 +138,8 @@ class BottomNavigationState extends State<BottomNavigation> {
               _buildOffstageNavigator("sell"),
             ]),
             bottomNavigationBar: _currentPage == "home_second" ||
-                    _currentPage == "setting"
+                    _currentPage == "setting" ||
+                    _currentPage == "notification"
                 ? Theme(
                     data: Theme.of(context).copyWith(
                         canvasColor: Color(
@@ -162,24 +156,24 @@ class BottomNavigationState extends State<BottomNavigation> {
                       type: BottomNavigationBarType.fixed,
                       items: [
                         BottomNavigationBarItem(
-                          icon:  SvgPicture.asset('assets/svg/menu4.svg',
-                          color: _selectedIndex == 0
-                      ? Color(0xffF15E9E)
-                      : Color(0xffA8AAB3),),
-                          
+                          icon: SvgPicture.asset(
+                            'assets/svg/menu4.svg',
+                            color: _selectedIndex == 0
+                                ? Color(0xffF15E9E)
+                                : Color(0xffA8AAB3),
+                          ),
                           title: new Text(
                             "Home",
                             style: TextStyle(fontSize: 12, fontFamily: 'Inter'),
                           ),
                         ),
                         new BottomNavigationBarItem(
-                          icon:  SvgPicture.asset('assets/svg/menu3.svg',
-                          color: _selectedIndex == 1
-                      ? Color(0xffF15E9E)
-                      : Color(0xffA8AAB3),
-                ),
-                          
-                          
+                          icon: SvgPicture.asset(
+                            'assets/svg/menu3.svg',
+                            color: _selectedIndex == 1
+                                ? Color(0xffF15E9E)
+                                : Color(0xffA8AAB3),
+                          ),
                           title: new Text(
                             "Notification",
                             style: TextStyle(fontSize: 12, fontFamily: 'Inter'),
@@ -187,42 +181,42 @@ class BottomNavigationState extends State<BottomNavigation> {
                         ),
                         new BottomNavigationBarItem(
                             icon: Padding(
-                                padding: EdgeInsets.only(top: 10),
-                                child: Container(
-                                  height: 40,
-                                  width: 40,
-                                  decoration: BoxDecoration(
-                                      color: Color(0xff957DEB),
-                                      borderRadius: BorderRadius.circular(50),
-                                     ),
-                                     child:  
-                                    
-                                      SvgPicture.asset('assets/svg/menu5.svg',fit: BoxFit.scaleDown,
-                                     color: _selectedIndex == 2
-                      ? Colors.white
-                      : Colors.white,
-                                     )
-                                     ,
-                                     
-                                     ),
+                              padding: EdgeInsets.only(top: 10),
+                              child: Container(
+                                height: 40,
+                                width: 40,
+                                decoration: BoxDecoration(
+                                  color: Color(0xff957DEB),
+                                  borderRadius: BorderRadius.circular(50),
                                 ),
+                                child: SvgPicture.asset(
+                                  'assets/svg/menu5.svg',
+                                  fit: BoxFit.scaleDown,
+                                  color: _selectedIndex == 2
+                                      ? Colors.white
+                                      : Colors.white,
+                                ),
+                              ),
+                            ),
                             title: Text('')),
                         new BottomNavigationBarItem(
-                           icon:  SvgPicture.asset('assets/svg/menu1.svg',
-                             color: _selectedIndex == 3
-                      ? Color(0xffF15E9E)
-                      : Color(0xffA8AAB3),
-                           ),
+                          icon: SvgPicture.asset(
+                            'assets/svg/menu1.svg',
+                            color: _selectedIndex == 3
+                                ? Color(0xffF15E9E)
+                                : Color(0xffA8AAB3),
+                          ),
                           title: new Text(
                             "Profile",
                             style: TextStyle(fontSize: 12, fontFamily: 'Inter'),
                           ),
                         ),
                         new BottomNavigationBarItem(
-                          icon:  SvgPicture.asset('assets/svg/menu2.svg',
+                          icon: SvgPicture.asset(
+                            'assets/svg/menu2.svg',
                             color: _selectedIndex == 4
-                      ? Color(0xffF15E9E)
-                      : Color(0xffA8AAB3),
+                                ? Color(0xffF15E9E)
+                                : Color(0xffA8AAB3),
                           ),
                           title: new Text(
                             "Setting",
@@ -281,8 +275,11 @@ class BottomNavigationState extends State<BottomNavigation> {
                               items: [
                                 BottomNavigationBarItem(
                                     icon: Padding(
-                                      padding: EdgeInsets.only(top: 3,bottom: 6),
-                                      child:    SvgPicture.asset('assets/svg/bottom2.svg',),
+                                      padding:
+                                          EdgeInsets.only(top: 3, bottom: 6),
+                                      child: SvgPicture.asset(
+                                        'assets/svg/bottom2.svg',
+                                      ),
                                     ),
                                     title: new Text(
                                       "Buy",
@@ -294,9 +291,10 @@ class BottomNavigationState extends State<BottomNavigation> {
                                     )),
                                 BottomNavigationBarItem(
                                     icon: Padding(
-                                      padding: EdgeInsets.only(top: 3,bottom: 6),
-                                      child:    SvgPicture.asset('assets/svg/bottom3.svg',
-                                     
+                                      padding:
+                                          EdgeInsets.only(top: 3, bottom: 6),
+                                      child: SvgPicture.asset(
+                                        'assets/svg/bottom3.svg',
                                       ),
                                     ),
                                     title: new Text(
@@ -309,20 +307,19 @@ class BottomNavigationState extends State<BottomNavigation> {
                                     )),
                                 BottomNavigationBarItem(
                                     icon: Padding(
-                                      padding: EdgeInsets.only(top:5 ),
+                                      padding: EdgeInsets.only(top: 5),
                                       child: Container(
-                                        height: 35,
-                                        width: 35,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            color: Color(0xff957DEB)),
-                                        child: SvgPicture.asset('assets/svg/main.svg',
-                                       fit: BoxFit.scaleDown,
-                                     )
-                                        ),
-                                      ),
-                                    
+                                          height: 35,
+                                          width: 35,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(50),
+                                              color: Color(0xff957DEB)),
+                                          child: SvgPicture.asset(
+                                            'assets/svg/main.svg',
+                                            fit: BoxFit.scaleDown,
+                                          )),
+                                    ),
                                     title: new Text(
                                       "",
                                       style: TextStyle(
@@ -332,10 +329,11 @@ class BottomNavigationState extends State<BottomNavigation> {
                                           fontFamily: 'Inter'),
                                     )),
                                 BottomNavigationBarItem(
-                                     icon: Padding(
-                                      padding: EdgeInsets.only(top: 3,bottom: 6),
-                                      child:    SvgPicture.asset('assets/svg/bottom1.svg',
-                                     
+                                    icon: Padding(
+                                      padding:
+                                          EdgeInsets.only(top: 3, bottom: 6),
+                                      child: SvgPicture.asset(
+                                        'assets/svg/bottom1.svg',
                                       ),
                                     ),
                                     title: new Text(
@@ -348,9 +346,10 @@ class BottomNavigationState extends State<BottomNavigation> {
                                     )),
                                 BottomNavigationBarItem(
                                     icon: Padding(
-                                      padding: EdgeInsets.only(top: 3,bottom: 6),
-                                      child:    SvgPicture.asset('assets/svg/bottom5.svg',
-                                     
+                                      padding:
+                                          EdgeInsets.only(top: 3, bottom: 6),
+                                      child: SvgPicture.asset(
+                                        'assets/svg/bottom5.svg',
                                       ),
                                     ),
                                     title: new Text(
