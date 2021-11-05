@@ -24,6 +24,7 @@ final screens = [
   NewRequest(),
   NewHomepage(),
   BuYCoins(),
+  UploadNewProperty(),
 ];
 
 class TabNavigator extends StatelessWidget {

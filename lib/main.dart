@@ -39,6 +39,6 @@ class MyApp extends StatelessWidget {
             // is not restarted.
           ),
         ),
-        home: PaymentMethod());
+        home: SplashScreen());
   }
 }

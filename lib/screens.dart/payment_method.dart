@@ -13,7 +13,7 @@ class PaymentMethod extends StatefulWidget {
 }
 
 class _PaymentMethodState extends State<PaymentMethod> {
-  bool _btn1Pressed = false;
+  bool _btn1Pressed = true;
   bool _btn2Pressed = false;
   bool _btn3Pressed = false;
   bool _btn4Pressed = false;
@@ -120,8 +120,8 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                               color: _btn1Pressed
-                                                  ? Colors.blue
-                                                  : Colors.black,
+                                                  ? Color(0xffF15E9E)
+                                                  : Color(0xff272E4A),
                                             ),
                                             child: Center(
                                                 child: Text(
@@ -149,8 +149,8 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                               color: _btn2Pressed
-                                                  ? Colors.blue
-                                                  : Colors.black,
+                                                  ? Color(0xffF15E9E)
+                                                  : Color(0xff272E4A),
                                             ),
                                             child: Center(
                                                 child: Text(
@@ -178,7 +178,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                               color: _btn3Pressed
-                                                  ? Colors.blue
+                                                  ? Color(0xffF15E9E)
                                                   : Color(0xff272E4A),
                                             ),
                                             child: Center(
@@ -199,11 +199,11 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                             _btn3Pressed = false;
                                             _btn4Pressed = true;
                                           });
-                                          Navigator.push(
+                                          /* Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      PrePaid()));
+                                                      PrePaid()));*/
                                         },
                                         child: Container(
                                           height: 30,
@@ -212,7 +212,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             color: _btn4Pressed
-                                                ? Colors.blue
+                                                ? Color(0xffF15E9E)
                                                 : Color(0xff272E4A),
                                           ),
                                           child: Center(

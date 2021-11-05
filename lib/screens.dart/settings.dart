@@ -28,21 +28,18 @@ class _SettingsState extends State<Settings> {
           SingleChildScrollView(
               child: Padding(
                   padding: EdgeInsets.only(
-                    top: size.height * 0.060,
-                    left: size.width*0.030
-                  ),
+                      top: size.height * 0.060, left: size.width * 0.030),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                            'Setting',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 22,
-                                color: Color(0xffFFFFFF)),
-                          ),
-                        
+                          'Setting',
+                          style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                              color: Color(0xffFFFFFF)),
+                        ),
                         SizedBox(
                           height: 22,
                         ),
@@ -204,11 +201,12 @@ class _SettingsState extends State<Settings> {
                         SizedBox(
                           height: 5,
                         ),
-                        
-                        
                         MaterialButton(
                           onPressed: () {
-                             Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileNew()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ProfileNew()));
                           },
                           height: 58,
                           minWidth: 375,
@@ -229,7 +227,10 @@ class _SettingsState extends State<Settings> {
                         ),
                         MaterialButton(
                           onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Signin()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Signin()));
                           },
                           height: 58,
                           minWidth: 375,
@@ -247,8 +248,6 @@ class _SettingsState extends State<Settings> {
                       ]))),
         ],
       ),
-
-     
     );
   }
 }
