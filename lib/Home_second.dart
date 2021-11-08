@@ -37,178 +37,162 @@ class _HomeSecondState extends State<HomeSecond> {
                     padding: EdgeInsets.only(
                       top: size.height * 0.000,
                     ),
-                    child: Container(
-                      height: size.height * 0.4,
-                      decoration: BoxDecoration(
-                          color: Color(0xff30395D),
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                              image:
-                                  new AssetImage('assets/images/bgcolor.png'),
-                              fit: BoxFit.fill)),
-                      child: Center(
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    left: 20, top: 40, right: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HomeSecond()));
-                                        },
-                                        child: Icon(
-                                          Icons.home,
-                                          size: 34,
-                                          color: Colors.white,
-                                        )),
-                                    GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      Settings()));
-                                        },
-                                        child: SvgPicture.asset(
-                                          'assets/svg/dot.svg',
-                                        ))
-                                  ],
-                                )),
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    left: 20, top: 37, right: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      ' $topValue',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 22,
-                                          color: Color(0xffFFFFFF)),
-                                    ),
-                                    Text(
-                                      ' +12.3%',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 14,
-                                          color: Color(0xffFFFFFF)),
-                                    ),
-                                  ],
-                                )),
-                            Padding(
-                              padding: EdgeInsets.only(left: 25, top: 6),
-                              child: Text(
-                                ' $topValue2',
-                                style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 14,
-                                    color: Color(0xffFFFFFF)),
-                              ),
-                            ),
-                            Stack(
-                              children: [
-                                Image(
-                                    image: AssetImage('assets/images/line.png'),
-                                    fit: BoxFit.cover),
-                                Padding(
-                                    padding: EdgeInsets.only(top: 2),
-                                    child: Stack(children: <Widget>[
-                                      Image(
-                                        image:
-                                            AssetImage('assets/images/g.png'),
-                                        width: 900,
-                                      ),
-                                      Padding(
-                                          padding: EdgeInsets.only(top: 110),
-                                          child: Stack(
-                                            children: <Widget>[
-                                              Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceEvenly,
-                                                children: [
-                                                  Text(
-                                                    ' H',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontWeight:
-                                                            FontWeight.w200,
-                                                        fontSize: 14,
-                                                        color:
-                                                            Color(0xffFFFFFF)),
-                                                  ),
-                                                  Padding(
-                                                      padding: EdgeInsets.only(
-                                                          top: 0),
-                                                      child: Container(
-                                                          height: 27,
-                                                          width: 36,
-                                                          decoration: BoxDecoration(
-                                                              color: Color(
-                                                                  0xff957DEB),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          10)),
-                                                          child: Center(
-                                                            child: Text(
-                                                              ' D',
-                                                              style: TextStyle(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w400,
-                                                                  fontSize: 17,
-                                                                  color: Color(
-                                                                      0xffFFFFFF)),
-                                                            ),
-                                                          ))),
-                                                  Text(
-                                                    ' W',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontWeight:
-                                                            FontWeight.w200,
-                                                        fontSize: 14,
-                                                        color:
-                                                            Color(0xffFFFFFF)),
-                                                  ),
-                                                  Text(
-                                                    ' Y',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontWeight:
-                                                            FontWeight.w200,
-                                                        fontSize: 14,
-                                                        color:
-                                                            Color(0xffFFFFFF)),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
+                    child: Stack(children: [
+                      Container(
+                        height: size.height * 0.4,
+                        decoration: BoxDecoration(
+                            color: Color(0xff30395D),
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                                image:
+                                    new AssetImage('assets/images/bgcolor.png'),
+                                fit: BoxFit.fill)),
+                        child: Center(
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                              Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 20, top: 40, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        HomeSecond()));
+                                          },
+                                          child: Icon(
+                                            Icons.home,
+                                            size: 34,
+                                            color: Colors.white,
+                                          )),
+                                      GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Settings()));
+                                          },
+                                          child: SvgPicture.asset(
+                                            'assets/svg/dot.svg',
                                           ))
-                                    ]))
-                              ],
-                            )
-                          ])),
-                    )),
+                                    ],
+                                  )),
+                              Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 20, top: 37, right: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        ' $topValue',
+                                        style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 22,
+                                            color: Color(0xffFFFFFF)),
+                                      ),
+                                      Text(
+                                        ' +12.3%',
+                                        style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14,
+                                            color: Color(0xffFFFFFF)),
+                                      ),
+                                    ],
+                                  )),
+                              Padding(
+                                padding: EdgeInsets.only(left: 25, top: 6),
+                                child: Text(
+                                  ' $topValue2',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14,
+                                      color: Color(0xffFFFFFF)),
+                                ),
+                              ),
+                              Stack(
+                                children: [
+                                  Image(
+                                      image:
+                                          AssetImage('assets/images/line.png'),
+                                      fit: BoxFit.cover),
+                                  Padding(
+                                      padding: EdgeInsets.only(top: 2),
+                                      child: Stack(children: <Widget>[
+                                        Image(
+                                          image:
+                                              AssetImage('assets/images/g.png'),
+                                          width: 900,
+                                        ),
+                                      ]))
+                                ],
+                              )
+                            ])),
+                      ),
+                      Positioned(
+                        bottom: 8,
+                        right: 48,
+                        left: 48,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              ' H',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 14,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(top: 0),
+                                child: Container(
+                                    height: 27,
+                                    width: 36,
+                                    decoration: BoxDecoration(
+                                        color: Color(0xff957DEB),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: Center(
+                                      child: Text(
+                                        ' D',
+                                        style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 17,
+                                            color: Color(0xffFFFFFF)),
+                                      ),
+                                    ))),
+                            Text(
+                              ' W',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 14,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                            Text(
+                              ' Y',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 14,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                          ],
+                        ),
+                      )
+                    ])),
                 Padding(
                   padding: EdgeInsets.only(left: 11, top: 15, right: 13),
                   child: Row(
