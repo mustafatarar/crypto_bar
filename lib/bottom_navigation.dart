@@ -91,7 +91,6 @@ class BottomNavigationState extends State<BottomNavigation> {
     "setting": GlobalKey<NavigatorState>(),
     "buy": GlobalKey<NavigatorState>(),
     "rent": GlobalKey<NavigatorState>(),
-    "home_second": GlobalKey<NavigatorState>(),
     "send": GlobalKey<NavigatorState>(),
     "sell": GlobalKey<NavigatorState>(),
   };

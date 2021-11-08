@@ -103,7 +103,7 @@ class _BuYCoinsState extends State<BuYCoins> {
                   child: Column(
                     children: [
                       Row(children: [
-                        Padding(padding: EdgeInsets.only(left: 20)),
+                        // Padding(padding: EdgeInsets.only(left: 10)),
                         DropdownButton<String>(
                           dropdownColor: Color(0xff444E76),
 
@@ -117,13 +117,16 @@ class _BuYCoinsState extends State<BuYCoins> {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
+                                      SizedBox(
+                                        width: 8,
+                                      ),
                                       Image(
                                         image: AssetImage(
                                             'assets/images/credit.png'),
                                         color: Colors.white,
                                       ),
                                       Padding(
-                                          padding: EdgeInsets.only(left: 24),
+                                          padding: EdgeInsets.only(left: 16),
                                           child: Text(
                                             'VISA 2124',
                                             style: TextStyle(
@@ -165,7 +168,25 @@ class _BuYCoinsState extends State<BuYCoins> {
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10.0),
+                                    child: Text(value),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        right: 5.0, left: 160),
+                                    child: Icon(
+                                      Icons.keyboard_arrow_down_sharp,
+                                      color: Color(0xff979797),
+                                      size: 40,
+                                    ),
+                                  )
+                                ],
+                              ),
                             );
                           }).toList(),
 
@@ -185,14 +206,16 @@ class _BuYCoinsState extends State<BuYCoins> {
                       Container(
                         child: Row(
                           children: <Widget>[
-                            Padding(padding: EdgeInsets.only(left: 20)),
+                            //  Padding(padding: EdgeInsets.only(left: 20)),
                             DropdownButton<String>(
                               underline: SizedBox(),
                               iconSize: 0.0,
                               dropdownColor: Color(0xff444E76),
                               hint: Row(
                                 children: [
-                                  Padding(padding: EdgeInsets.only(left: 0)),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
                                   Container(
                                       height: 30,
                                       width: 30,
@@ -208,7 +231,7 @@ class _BuYCoinsState extends State<BuYCoins> {
                                       )),
                                   Padding(
                                       padding: EdgeInsets.only(
-                                        left: 20,
+                                        left: 10,
                                       ),
                                       child: Column(
                                         crossAxisAlignment:
@@ -254,6 +277,9 @@ class _BuYCoinsState extends State<BuYCoins> {
                                   // value: _mySelection,
                                   child: Row(
                                     children: <Widget>[
+                                      SizedBox(
+                                        width: 8,
+                                      ),
                                       Container(
                                           height: 40,
                                           width: 40,
@@ -276,7 +302,7 @@ class _BuYCoinsState extends State<BuYCoins> {
                                                 map["detail"],
                                               )
                                             ],
-                                          ))
+                                          )),
                                     ],
                                   ),
                                 );

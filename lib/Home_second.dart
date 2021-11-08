@@ -3,6 +3,7 @@ import 'package:cryptoapp/screens.dart/Home.dart';
 import 'package:cryptoapp/screens.dart/Profile.dart';
 import 'package:cryptoapp/screens.dart/mainscreen.dart';
 import 'package:cryptoapp/screens.dart/settings.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,8 +17,7 @@ class HomeSecond extends StatefulWidget {
 class _HomeSecondState extends State<HomeSecond> {
   int selectedIndex = 0;
   String topValue = "1.05 ETH";
-   String topValue2 = "\$9,687+16.33%";
-   
+  String topValue2 = "\$9,687+16.33%";
 
   @override
   Widget build(BuildContext context) {
@@ -34,164 +34,183 @@ class _HomeSecondState extends State<HomeSecond> {
                   top: size.height * 0.000,
                 )),
                 Padding(
-                  padding: EdgeInsets.only(
-                    top: size.height * 0.000,
-                  ),
-                  child: Container(
-                    height: size.height * 0.4,
-                    decoration: BoxDecoration(
-                        color: Color(0xff30395D),
-                        borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
-                            image: new AssetImage('assets/images/bgcolor.png'),
-                            fit: BoxFit.fill)),
-                    child: Center(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                            padding: EdgeInsets.only(
-                                left: 20, top: 40,right: 20),
-                            child:Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                              GestureDetector(
-                                 onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeSecond()));
-                    },
-                    child: 
-                               Icon(Icons.home,size: 34,color: Colors.white,)),
-                                GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Settings()));
-                    },
-                    child: 
-                  
-                     
-    
-                            
-                                SvgPicture.asset('assets/svg/dot.svg',)
-                   )],
-                            )), 
-                            Padding(padding: EdgeInsets.only(left: 20,top: 37,right: 20),child: 
-                            Row(
-                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-
-                            
-                                Text(
-                                  ' $topValue',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 22,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                 Text(
-                                  ' +12.3%',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                  ],
-                            )
-                             ),
-                              Padding(padding: EdgeInsets.only(left: 25,top: 6),child: 
-                            
-                                Text(
-                                  ' $topValue2',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                             ),
-                              
-                               Stack(
-                                 children: [
-                                
-                           
-                            
-                               Image(image: AssetImage('assets/images/line.png'),
-                               fit: BoxFit.cover
-                              
-                              ),
-                             
-                             Padding(padding: EdgeInsets.only(top: 2),
-                              
-                              child:
-                               Stack(
-                                children: <Widget>[
-                               
-                             Image(image: AssetImage('assets/images/g.png'),
-                             width: 900, ),
-                              Padding(padding: EdgeInsets.only(top: 65,right: 50,left: 60),child:
-                             Row(
-                               crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                               children: [
-                                  Text(
-                                  ' H',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 14,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                
-                                Container(
-                                  height: 27,
-                                  width: 36,
-                                  decoration: BoxDecoration(
-                                     color: Color(0xff957DEB),
-                                    borderRadius: BorderRadius.circular(10)
-                                  ),
-                                 
-                                  child: Center(
-                                    child:  Text(
-                                  ' D',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 17,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                )
-                                ),
-                                  Text(
-                                  ' W',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 14,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                  Text(
-                                  ' Y',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 14,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                               ],
-                             )
-                              )
-                                ]
-                               )
-                            ) 
-                                 ],
-                               )
-                      ]
-                    )
+                    padding: EdgeInsets.only(
+                      top: size.height * 0.000,
                     ),
-                    
-                )),
+                    child: Container(
+                      height: size.height * 0.4,
+                      decoration: BoxDecoration(
+                          color: Color(0xff30395D),
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              image:
+                                  new AssetImage('assets/images/bgcolor.png'),
+                              fit: BoxFit.fill)),
+                      child: Center(
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    left: 20, top: 40, right: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      HomeSecond()));
+                                        },
+                                        child: Icon(
+                                          Icons.home,
+                                          size: 34,
+                                          color: Colors.white,
+                                        )),
+                                    GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Settings()));
+                                        },
+                                        child: SvgPicture.asset(
+                                          'assets/svg/dot.svg',
+                                        ))
+                                  ],
+                                )),
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    left: 20, top: 37, right: 20),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      ' $topValue',
+                                      style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22,
+                                          color: Color(0xffFFFFFF)),
+                                    ),
+                                    Text(
+                                      ' +12.3%',
+                                      style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 14,
+                                          color: Color(0xffFFFFFF)),
+                                    ),
+                                  ],
+                                )),
+                            Padding(
+                              padding: EdgeInsets.only(left: 25, top: 6),
+                              child: Text(
+                                ' $topValue2',
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                    color: Color(0xffFFFFFF)),
+                              ),
+                            ),
+                            Stack(
+                              children: [
+                                Image(
+                                    image: AssetImage('assets/images/line.png'),
+                                    fit: BoxFit.cover),
+                                Padding(
+                                    padding: EdgeInsets.only(top: 2),
+                                    child: Stack(children: <Widget>[
+                                      Image(
+                                        image:
+                                            AssetImage('assets/images/g.png'),
+                                        width: 900,
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 110),
+                                          child: Stack(
+                                            children: <Widget>[
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    ' H',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Poppins',
+                                                        fontWeight:
+                                                            FontWeight.w200,
+                                                        fontSize: 14,
+                                                        color:
+                                                            Color(0xffFFFFFF)),
+                                                  ),
+                                                  Padding(
+                                                      padding: EdgeInsets.only(
+                                                          top: 0),
+                                                      child: Container(
+                                                          height: 27,
+                                                          width: 36,
+                                                          decoration: BoxDecoration(
+                                                              color: Color(
+                                                                  0xff957DEB),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10)),
+                                                          child: Center(
+                                                            child: Text(
+                                                              ' D',
+                                                              style: TextStyle(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w400,
+                                                                  fontSize: 17,
+                                                                  color: Color(
+                                                                      0xffFFFFFF)),
+                                                            ),
+                                                          ))),
+                                                  Text(
+                                                    ' W',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Poppins',
+                                                        fontWeight:
+                                                            FontWeight.w200,
+                                                        fontSize: 14,
+                                                        color:
+                                                            Color(0xffFFFFFF)),
+                                                  ),
+                                                  Text(
+                                                    ' Y',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Poppins',
+                                                        fontWeight:
+                                                            FontWeight.w200,
+                                                        fontSize: 14,
+                                                        color:
+                                                            Color(0xffFFFFFF)),
+                                                  ),
+                                                ],
+                                              )
+                                            ],
+                                          ))
+                                    ]))
+                              ],
+                            )
+                          ])),
+                    )),
                 Padding(
-                  padding: EdgeInsets.only(left: 11, top: 15,right: 13),
+                  padding: EdgeInsets.only(left: 11, top: 15, right: 13),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -203,15 +222,14 @@ class _HomeSecondState extends State<HomeSecond> {
                             fontSize: 14,
                             color: Color(0xffAEB6CE)),
                       ),
-                     
-                           Text(
-                            'See All',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w200,
-                                fontSize: 14,
-                                color: Color(0xff957DEB)),
-                          )
+                      Text(
+                        'See All',
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w200,
+                            fontSize: 14,
+                            color: Color(0xff957DEB)),
+                      )
                     ],
                   ),
                 ),
@@ -226,8 +244,6 @@ class _HomeSecondState extends State<HomeSecond> {
                               onTap: () {
                                 setState(() {
                                   topValue = "1.05 ETH";
-                                 
-                              
                                 });
                               },
                               child: Container(
@@ -553,9 +569,9 @@ class _HomeSecondState extends State<HomeSecond> {
                           ],
                         ))),
                 Padding(
-                  padding: EdgeInsets.only(left: 11, top: size.height * 0.030,right: 13),
+                  padding: EdgeInsets.only(
+                      left: 11, top: size.height * 0.030, right: 13),
                   child: Row(
-
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -567,350 +583,357 @@ class _HomeSecondState extends State<HomeSecond> {
                             color: Color(0xffAEB6CE)),
                       ),
                       Text(
-                            'See All',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w200,
-                                fontSize: 14,
-                                color: Color(0xff957DEB)),
-                          )
+                        'See All',
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w200,
+                            fontSize: 14,
+                            color: Color(0xff957DEB)),
+                      )
                     ],
                   ),
                 ),
-                SizedBox(height: 8,),
-               Center(
+                SizedBox(
+                  height: 8,
+                ),
+                Center(
                     child: Container(
-                      height: size.height * 0.120,
-                      width: 339,
-                      decoration: BoxDecoration(
-                        color: Color(0xff3F4767),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Padding(
-                              padding: EdgeInsets.only(left: 12),
-                              child: Container(
-                                  height: 45,
-                                  width: 45,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/images/bitcoin bg.png')),
-                                  ),
-                                  padding: EdgeInsets.only(
-                                    top: 5,
-                                  ),
-                                  child: Image(
-                                    image:
-                                        AssetImage('assets/images/bitcon.png'),
-                                  ))),
-                          Padding(
-                            padding: EdgeInsets.only(left: 5, top: 30),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'BTC',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 16,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Text(
-                                      '+1.6%',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 14,
-                                          color: Color(0xffAEB6CE)),
-                                    ))
-                              ],
-                            ),
-                          ),
-                          Image(
-                            image: AssetImage('assets/images/Homebg2.png'),
-                            height: 50,
-                            width: 115,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10, top: 30),
-                            child: Column(
-                              children: [
-                                Text(
-                                  '\$29,850.15 ',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 16,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Text(
-                                      '2.73 BTC',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 14,
-                                          color: Color(0xffAEB6CE)),
-                                    ))
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )),
-                SizedBox(height: 6,),
-               Center(
-                    child: Container(
-                      height: size.height * 0.120,
-                      width: 339,
-                      decoration: BoxDecoration(
-                        color: Color(0xff3F4767),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Padding(
-                              padding: EdgeInsets.only(left: 12),
-                              child: Container(
-                                  height: 45,
-                                  width: 45,
-                                  decoration: BoxDecoration(
-                                      borderRadius: (BorderRadius.circular(15)),
-                                      color: Color(0xff374C3)),
-                                  padding: EdgeInsets.only(top: 5),
-                                  child: Image(
+                  height: size.height * 0.120,
+                  width: 339,
+                  decoration: BoxDecoration(
+                    color: Color(0xff3F4767),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.only(left: 12),
+                          child: Container(
+                              height: 45,
+                              width: 45,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
                                     image: AssetImage(
-                                        'assets/images/arrow logo.png'),
-                                  ))),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10, top: 30),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'ETH',
+                                        'assets/images/bitcoin bg.png')),
+                              ),
+                              padding: EdgeInsets.only(
+                                top: 5,
+                              ),
+                              child: Image(
+                                image: AssetImage('assets/images/bitcon.png'),
+                              ))),
+                      Padding(
+                        padding: EdgeInsets.only(left: 5, top: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              'BTC',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 16,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '+1.6%',
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 16,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Text(
-                                      '+1.6%',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 14,
-                                          color: Color(0xffAEB6CE)),
-                                    ))
-                              ],
-                            ),
-                          ),
-                          Image(
-                            image: AssetImage('assets/images/Homebg2.png'),
-                            color: Color(0xff6374C3),
-                            height: 50,
-                            width: 115,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10, top: 30),
-                            child: Column(
-                              children: [
-                                Text(
-                                  '\$29,850.15 ',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 16,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Text(
-                                      '2.73 BTC',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 14,
-                                          color: Color(0xffAEB6CE)),
-                                    ))
-                              ],
-                            ),
-                          ),
-                        ],
+                                      fontSize: 14,
+                                      color: Color(0xffAEB6CE)),
+                                ))
+                          ],
+                        ),
                       ),
-                    )),
-               SizedBox(height: 6,),
-               Center(
+                      Image(
+                        image: AssetImage('assets/images/Homebg2.png'),
+                        height: 50,
+                        width: 115,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10, top: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              '\$29,850.15 ',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 16,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '2.73 BTC',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14,
+                                      color: Color(0xffAEB6CE)),
+                                ))
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+                SizedBox(
+                  height: 6,
+                ),
+                Center(
                     child: Container(
-                      height: size.height * 0.120,
-                      width:  339,
-                      decoration: BoxDecoration(
-                        color: Color(0xff3F4767),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 12),
-                            child: Container(
+                  height: size.height * 0.120,
+                  width: 339,
+                  decoration: BoxDecoration(
+                    color: Color(0xff3F4767),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.only(left: 12),
+                          child: Container(
                               height: 45,
                               width: 45,
                               decoration: BoxDecoration(
-                                  borderRadius: (BorderRadius.circular(5)),
+                                  borderRadius: (BorderRadius.circular(15)),
                                   color: Color(0xff374C3)),
-                              child: SvgPicture.asset(
-                                'assets/svg/ltc.svg',
-                                fit: BoxFit.cover,
-                              ),
+                              padding: EdgeInsets.only(top: 5),
+                              child: Image(
+                                image:
+                                    AssetImage('assets/images/arrow logo.png'),
+                              ))),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10, top: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              'ETH',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 16,
+                                  color: Color(0xffFFFFFF)),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 7, top: 30),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'LTC',
+                            Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '+1.6%',
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 16,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Text(
-                                      '-2.6%',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 14,
-                                          color: Color(0xffAEB6CE)),
-                                    ))
-                              ],
-                            ),
-                          ),
-                          Image(
-                            image: AssetImage('assets/images/Homebg2.png'),
-                            color: Color(0xff30E0A1),
-                            height: 50,
-                            width: 115,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10, top: 30),
-                            child: Column(
-                              children: [
-                                Text(
-                                  '\$3,676.76  ',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 16,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Text(
-                                      '39,27 LTC',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 14,
-                                          color: Color(0xffAEB6CE)),
-                                    ))
-                              ],
-                            ),
-                          ),
-                        ],
+                                      fontSize: 14,
+                                      color: Color(0xffAEB6CE)),
+                                ))
+                          ],
+                        ),
                       ),
-                    )),
-               SizedBox(height: 6,),
-               Center(
+                      Image(
+                        image: AssetImage('assets/images/Homebg2.png'),
+                        color: Color(0xff6374C3),
+                        height: 50,
+                        width: 115,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10, top: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              '\$29,850.15 ',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 16,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '2.73 BTC',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14,
+                                      color: Color(0xffAEB6CE)),
+                                ))
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+                SizedBox(
+                  height: 6,
+                ),
+                Center(
                     child: Container(
-                      height: size.height * 0.120,
-                      width:339,
-                      decoration: BoxDecoration(
-                        color: Color(0xff3F4767),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 12),
-                            child: Container(
-                              height: 45,
-                              width: 45,
-                              decoration: BoxDecoration(
-                                borderRadius: (BorderRadius.circular(5)),
-                              ),
-                              child: SvgPicture.asset(
-                                'assets/svg/xrpp.svg',
-                                height: 10,
-                                width: 10,
-                              ),
-                            ),
+                  height: size.height * 0.120,
+                  width: 339,
+                  decoration: BoxDecoration(
+                    color: Color(0xff3F4767),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 12),
+                        child: Container(
+                          height: 45,
+                          width: 45,
+                          decoration: BoxDecoration(
+                              borderRadius: (BorderRadius.circular(5)),
+                              color: Color(0xff374C3)),
+                          child: SvgPicture.asset(
+                            'assets/svg/ltc.svg',
+                            fit: BoxFit.cover,
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 0, top: 30),
-                            child: Column(
-                              children: [
-                                Text(
-                                  'XRP',
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 7, top: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              'LTC',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 16,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '-2.6%',
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 16,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Text(
-                                      '+0.26%',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 14,
-                                          color: Color(0xffAEB6CE)),
-                                    ))
-                              ],
+                                      fontSize: 14,
+                                      color: Color(0xffAEB6CE)),
+                                ))
+                          ],
+                        ),
+                      ),
+                      Image(
+                        image: AssetImage('assets/images/Homebg2.png'),
+                        color: Color(0xff30E0A1),
+                        height: 50,
+                        width: 115,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10, top: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              '\$3,676.76  ',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 16,
+                                  color: Color(0xffFFFFFF)),
                             ),
-                          ),
-                          Image(
-                            image: AssetImage('assets/images/Homebg2.png'),
-                            color: Color(0xff638FFE),
-                            height: 50,
-                            width: 115,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 0, top: 30),
-                            child: Column(
-                              children: [
-                                Text(
-                                  '\$3,676.76  ',
+                            Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '39,27 LTC',
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w200,
-                                      fontSize: 16,
-                                      color: Color(0xffFFFFFF)),
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(left: 10),
-                                    child: Text(
-                                      '1,64 XRP',
-                                      style: TextStyle(
-                                          fontFamily: 'Poppins',
-                                          fontSize: 14,
-                                          color: Color(0xffAEB6CE)),
-                                    ))
-                              ],
-                            ),
-                          ),
-                        ],
+                                      fontSize: 14,
+                                      color: Color(0xffAEB6CE)),
+                                ))
+                          ],
+                        ),
                       ),
-                    )),
+                    ],
+                  ),
+                )),
+                SizedBox(
+                  height: 6,
+                ),
+                Center(
+                    child: Container(
+                  height: size.height * 0.120,
+                  width: 339,
+                  decoration: BoxDecoration(
+                    color: Color(0xff3F4767),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 12),
+                        child: Container(
+                          height: 45,
+                          width: 45,
+                          decoration: BoxDecoration(
+                            borderRadius: (BorderRadius.circular(5)),
+                          ),
+                          child: SvgPicture.asset(
+                            'assets/svg/xrpp.svg',
+                            height: 10,
+                            width: 10,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 0, top: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              'XRP',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 16,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '+0.26%',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14,
+                                      color: Color(0xffAEB6CE)),
+                                ))
+                          ],
+                        ),
+                      ),
+                      Image(
+                        image: AssetImage('assets/images/Homebg2.png'),
+                        color: Color(0xff638FFE),
+                        height: 50,
+                        width: 115,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 0, top: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              '\$3,676.76  ',
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 16,
+                                  color: Color(0xffFFFFFF)),
+                            ),
+                            Padding(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text(
+                                  '1,64 XRP',
+                                  style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 14,
+                                      color: Color(0xffAEB6CE)),
+                                ))
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
               ],
             ))
           : selectedIndex == 1
